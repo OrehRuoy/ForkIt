@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Privacy Policy — Fork It</title>
+  <meta name="description" content="Privacy policy for the Fork It Android app (com.forkit.randomrestaurant).">
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #1c1915;
+      --muted: #5c564c;
+      --line: #e4ddd2;
+      --paper: #faf7f2;
+      --card: #fffdf9;
+      --accent: #8a4b12;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Georgia, "Iowan Old Style", "Palatino Linotype", Palatino, serif;
+      color: var(--ink);
+      background: var(--paper);
+      line-height: 1.55;
+    }
+    main {
+      max-width: 42rem;
+      margin: 0 auto;
+      padding: 2.5rem 1.25rem 4rem;
+    }
+    header {
+      border-bottom: 1px solid var(--line);
+      margin-bottom: 1.75rem;
+      padding-bottom: 1.25rem;
+    }
+    h1 {
+      font-size: 2rem;
+      line-height: 1.15;
+      margin: 0 0 0.35rem;
+    }
+    h2 {
+      font-size: 1.25rem;
+      margin: 2rem 0 0.6rem;
+    }
+    h3 {
+      font-size: 1.05rem;
+      margin: 1.4rem 0 0.4rem;
+    }
+    p, li { font-size: 1.02rem; }
+    .meta { color: var(--muted); margin: 0.15rem 0; }
+    a { color: var(--accent); }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: var(--card);
+      font-size: 0.95rem;
+    }
+    th, td {
+      text-align: left;
+      vertical-align: top;
+      border: 1px solid var(--line);
+      padding: 0.55rem 0.65rem;
+    }
+    th { background: #f3ece3; }
+    code { font-family: Consolas, ui-monospace, monospace; font-size: 0.92em; }
+  </style>
+</head>
+<body>
+<main>
+  <header>
+    <h1>Privacy Policy for Fork It</h1>
+    <p class="meta"><strong>Last updated:</strong> October 14, 2026</p>
+    <p class="meta"><strong>Package name:</strong> <code>com.forkit.randomrestaurant</code></p>
+  </header>
+
+  <p>This Privacy Policy describes how the mobile application <strong>Fork It</strong> (“the App”) handles information when you use it. By using the App, you agree to this policy.</p>
+
+  <h2>1. Who we are</h2>
+  <p>The App is provided by:</p>
+  <p><strong>Brock Hall</strong><br>
+  <strong>Contact email:</strong> <a href="mailto:hallanhype@gmail.com">hallanhype@gmail.com</a></p>
+
+  <h2>2. Summary</h2>
+  <ul>
+    <li>The App does <strong>not</strong> require an account, and it does not offer sign-in.</li>
+    <li>The App uses your device location to find places open near you. That location is sent only to Fork It's server so it can ask Google Places for nearby results. We do not store your location.</li>
+    <li>Place details (name, address, rating, photos, reviews) come from <strong>Google Places</strong> through that server. The App may open links in <strong>Google Maps</strong> or a delivery search when you tap those buttons.</li>
+    <li>Settings, history, favorites, streak, and reminder times stay <strong>on your device</strong>.</li>
+    <li>Meal reminders are optional and stay off until you turn them on. They are scheduled on the device.</li>
+    <li>The App shows ads through <strong>Google AdMob</strong> (banner, interstitial, and optional rewarded). It does not show app-open ads. <strong>Fork It Plus</strong>, bought through Google Play, turns these ads off.</li>
+    <li>The App uses <strong>Firebase App Check</strong> and <strong>Firebase Analytics</strong>. Analytics events do not include coordinates, place names, or other information that identifies you.</li>
+    <li>A random install id is sent with place searches so the server can limit request volume. The server stores those request counts. It does not store your location, history, or favorites.</li>
+  </ul>
+
+  <h2>3. Information the App processes</h2>
+
+  <h3>3.1 Data stored locally on your device</h3>
+  <p>The App stores data in app-local storage. This data stays on the device:</p>
+  <ul>
+    <li>Search radius and whether device location is on</li>
+    <li>Restaurant preference toggles, exclusion filters, and excluded names you add</li>
+    <li>Place thumbs-up and thumbs-down choices used to influence future picks</li>
+    <li>History, favorites, hidden places, and your fork streak</li>
+    <li>Whether meal reminders are on, and the lunch and dinner times you pick</li>
+    <li>Whether Fork It Plus is owned on this device</li>
+    <li>A random install id used only for request limits</li>
+  </ul>
+  <p>Clearing the App's data or uninstalling it removes this local data, subject to your device backup and restore behavior.</p>
+
+  <h3>3.2 Location data</h3>
+  <p>Before the first location prompt, the App explains that location is used to find places open near you and is not stored.</p>
+  <p>The App then asks the operating system for a current location and sends that latitude and longitude to Fork It's server (<code>fork-it-restaurant-finder</code>, Cloud Functions in <code>us-central1</code>) together with the install id. The server forwards the search to Google Places and does not write the coordinates to a database.</p>
+  <p>Approximate distance shown in the App is calculated on the device. Nearby search cannot run if you deny location permission.</p>
+
+  <h3>3.3 Network requests and third-party services</h3>
+  <p>When you use the App, it can send requests to these services:</p>
+  <table>
+    <thead>
+      <tr><th>Service</th><th>Purpose</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Fork It server (Cloud Functions)</strong></td>
+        <td>Receives location and search options, checks App Check, applies rate limits, and calls Google Places. It does not store coordinates. It stores request counts keyed by the install id.</td>
+      </tr>
+      <tr>
+        <td><strong>Google Places API</strong></td>
+        <td>Nearby places and place metadata (name, address, rating, user rating count, reviews, photos, map URI).</td>
+      </tr>
+      <tr>
+        <td><strong>Google Maps / maps URLs</strong></td>
+        <td>Open navigation when you tap “Take me there”.</td>
+      </tr>
+      <tr>
+        <td><strong>Google-hosted image endpoints</strong></td>
+        <td>Load place photos for result cards.</td>
+      </tr>
+      <tr>
+        <td><strong>Google Play Billing</strong></td>
+        <td>Handle the Fork It Plus purchase.</td>
+      </tr>
+      <tr>
+        <td><strong>Sites or apps you open</strong></td>
+        <td>Delivery search and share actions open a link or the system share sheet only when you tap them.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>These services receive standard technical request data (such as IP address, device or network metadata, and request timing) according to their own policies.</p>
+
+  <h3>3.4 Advertising (Google AdMob)</h3>
+  <p>The App uses <strong>Google AdMob</strong> to show banner, interstitial, and optional rewarded ads. It does not show app-open ads. Ads load only after Google's consent flow finishes. Fork It Plus turns these ads off.</p>
+  <p><strong>Firebase Analytics</strong> records product events such as a fork, a result, or an ad outcome. Event parameters stay small and do not include coordinates, names, or other personal details.</p>
+  <p><strong>Firebase App Check</strong> proves the request comes from the Fork It app. Debug builds print an App Check debug token in logcat so it can be registered. Release builds use Play Integrity.</p>
+  <p>Google may process identifiers (including advertising ID), device and app information, and ad interaction data to provide, measure, and protect ad services, and to personalize ads where allowed.</p>
+  <p>Please review:</p>
+  <ul>
+    <li><a href="https://policies.google.com/privacy">Google Privacy Policy</a></li>
+    <li><a href="https://policies.google.com/technologies/partner-sites">How Google uses information from sites or apps that use our services</a></li>
+  </ul>
+  <p>Depending on your region and device, you may be able to adjust ad personalization in your Google account and device Ads settings.</p>
+
+  <h3>3.5 Purchases</h3>
+  <p>Fork It Plus is sold through Google Play. Google Play processes the payment. Fork It does not receive your card number. The App stores on the device whether Plus is owned, so ads stay off and the higher daily fork limit applies.</p>
+
+  <h3>3.6 Meal reminders</h3>
+  <p>Reminders are off until you enable them in Settings. The times you choose are stored on the device. Android shows the notifications locally. Those times are not sent to Fork It's server.</p>
+
+  <h2>4. We do not sell your personal data</h2>
+  <p>We do not sell your personal information. We do not operate an account server. Favorites, history, and settings stay on this device. The server keeps rate-limit counts for the install id and does not keep a profile of places you picked.</p>
+
+  <h2>5. Children's privacy</h2>
+  <p>The App is not directed to children under 13 (or the minimum age required in your country). We do not knowingly collect personal information directly for our own backend services. Third-party services (for example Google APIs and AdMob) may process technical data as part of normal app operation.</p>
+
+  <h2>6. Security</h2>
+  <p>We aim to keep user settings local to the device. Requests to Fork It's server use HTTPS. No transmission or storage method is 100% secure.</p>
+
+  <h2>7. International users</h2>
+  <p>If you use the App outside your home country, data handled by Google, Firebase, or Play services may be processed in other countries where those services or their infrastructure operate.</p>
+
+  <h2>8. Your choices</h2>
+  <ul>
+    <li><strong>Location:</strong> Deny location permission. Fork It cannot search nearby without it.</li>
+    <li><strong>Reminders:</strong> Leave them off, or turn them off in Settings.</li>
+    <li><strong>Ads:</strong> Use device and Google settings to limit ad personalization where available. Fork It Plus removes the App's ads.</li>
+    <li><strong>Local data:</strong> Clear app data or uninstall to remove settings, favorites, history, and the install id stored on the device.</li>
+    <li><strong>Questions:</strong> Contact us at the email listed above.</li>
+  </ul>
+
+  <h2>9. Changes to this policy</h2>
+  <p>We may update this Privacy Policy from time to time. The “Last updated” date will change when we do. Continued use of the App after updates means you accept the revised policy.</p>
+
+  <h2>10. Third-party policy references</h2>
+  <ul>
+    <li>Google Privacy Policy: <a href="https://policies.google.com/privacy">https://policies.google.com/privacy</a></li>
+    <li>Google partner sites/apps data use: <a href="https://policies.google.com/technologies/partner-sites">https://policies.google.com/technologies/partner-sites</a></li>
+  </ul>
+</main>
+</body>
+</html>
